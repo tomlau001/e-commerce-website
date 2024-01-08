@@ -72,12 +72,10 @@ const Navbar = () => {
           )}
           <div className="login-avatar">
             {session && (
-              <Link onClick={() => signOut()} href="/login">
-                <button className="nav-btn">
-                  <BsPerson className="icon" />
-                  <span className="hide">Log out</span>
-                </button>
-              </Link>
+              <button onClick={() => signOut()} className="nav-btn">
+                <BsPerson className="icon" />
+                <span className="hide">Log out</span>
+              </button>
             )}
             {session && (
               <Image
@@ -91,12 +89,10 @@ const Navbar = () => {
           </div>
 
           {!session && (
-            <Link onClick={() => signIn()} href="/login">
-              <button className="nav-btn">
-                <BsPerson className="icon" />
-                <span className="hide">Login</span>
-              </button>
-            </Link>
+            <button onClick={() => signIn()} className="nav-btn">
+              <BsPerson className="icon" />
+              <span className="hide">Login</span>
+            </button>
           )}
 
           <div className="cart-wrapper">
