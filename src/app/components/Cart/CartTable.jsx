@@ -7,7 +7,7 @@ import {
   saveToOrder,
 } from "@/app/redux/shoppingSlice";
 import { loadStripe } from "@stripe/stripe-js";
-import { useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
@@ -36,6 +36,7 @@ const Cart = () => {
 
   const handleCheckout = async () => {
     setIsLoading(true);
+
     const stripe = await stripePromise;
     const res = await fetch(`http://localhost:3000/api/checkout`, {
       method: "POST",
@@ -84,12 +85,18 @@ const Cart = () => {
             <p>{product.title}</p>
             <p>{`$${product.price}`}</p>
             <div className="cart-quantity">
-              <button className="quantity-btn" onClick={() => dispatch(decreaseQuanByOne(product))}>
+              <button
+                className="quantity-btn"
+                onClick={() => dispatch(decreaseQuanByOne(product))}
+              >
                 {" "}
                 -{" "}
               </button>
               <p>{product.quantity}</p>
-              <button className="quantity-btn" onClick={() => dispatch(increaseQuanByOne(product))}>
+              <button
+                className="quantity-btn"
+                onClick={() => dispatch(increaseQuanByOne(product))}
+              >
                 {" "}
                 +{" "}
               </button>
@@ -134,11 +141,7 @@ const Cart = () => {
           </div>
           <Button
             className="checkout-btn"
-            onClick={
-              itemData.length === 0
-                ? () => toast.error(`your cart is empty`)
-                : handleCheckout
-            }
+            onClick={!session ? () => signIn() : handleCheckout}
             isLoading={isLoading}
           >
             Check Out
