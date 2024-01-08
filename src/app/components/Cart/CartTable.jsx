@@ -38,7 +38,7 @@ const Cart = () => {
     setIsLoading(true);
 
     const stripe = await stripePromise;
-    const res = await fetch(`http://localhost:3000/api/checkout`, {
+    const res = await fetch(`https://e-commerce-website-tau-sepia.vercel.app/api/checkout`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
