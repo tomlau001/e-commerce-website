@@ -1,0 +1,178 @@
+nav {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-logo img {
+  width: 7.5rem;
+  height: 7.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 4rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.nav-menu ul li {
+  cursor: pointer;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.active {
+  color: var(--primary-color);
+}
+
+.nav-btns {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.nav-btns button {
+  padding: .75rem 2.5rem;
+  border-radius: 20px;
+  border: none;
+  background: white;
+  cursor: pointer;
+  font-weight: 700;
+  border: .0625rem solid var(--text-color);
+}
+
+.nav-btns button:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.nav-btns .nav-cart {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.nav-btns .cart-wrapper {
+  position: relative;
+}
+
+.nav-btns .cart-count {
+  position: absolute;
+  top: 0;
+  right: -15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: red;
+  color: var(--text-color);
+  border-radius: 50%;
+  font-size: .75rem;
+}
+
+.login-avatar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  font-size: 16px;
+}
+
+@media (max-width: 1250px) {
+  .nav-logo img {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  nav {
+    max-width: 100%;
+    padding: 0 .5rem;
+  }
+
+  .nav-menu {
+    font-size: 1.1rem;
+    gap: 2.5rem;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .nav-btns button {
+    padding: .5rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-logo img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .nav-menu {
+    font-size: .75rem;
+    gap: 1rem;
+  }
+
+  .nav-btns {
+    gap: 0.5rem;
+  }
+
+  .nav-btns button {
+    padding: 0.25rem .5rem;
+    font-size: .5rem;
+  }
+
+  .nav-btns .nav-cart {
+    font-size: 1.75rem;
+  }
+
+  .nav-btns .cart-wrapper {
+    position: relative;
+  }
+
+  .nav-btns .cart-count {
+    right: -10%;
+    width: .75rem;
+    height: .75rem;
+    font-size: 0.625rem;
+  }
+
+  .login-avatar {
+    gap: 8px;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .icon {
+    font-size: .75rem;
+  }
+}

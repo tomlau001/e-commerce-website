@@ -1,0 +1,17 @@
+.success-page {
+  height: 48vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-buttons {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+
+.success-buttons a,
+.success-buttons a button {
+  width: 100%;
+}

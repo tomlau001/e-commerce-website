@@ -1,0 +1,45 @@
+.checkout-btn {
+  width: 40%;
+  height: 50px;
+  margin-top: 24px;
+  border: 1px solid #333333;
+  outline: none;
+  color: var(--text-color);
+  background: transparent;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.checkout-btn:hover {
+  color: var(--background-color);
+  background: var(--text-color);
+}
+
+.checkout-btn {
+  position: relative;
+}
+
+.loader {
+  position: absolute;
+  right: 10%;
+  width: 22px;
+  height: 22px;
+  border: 2px solid grey;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
